@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Image Compressor — Frontend</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="card">
+    <h1>Image Compressor</h1>
+
+    <div class="section">
+      <label>(1) Upload image from computer</label>
+      <input type="file" id="fileInput" accept="image/*" />
+    </div>
+
+    <div class="section">
+      <label>(2) Choose from browser (file input)</label>
+      <input type="file" id="browserInput" accept="image/*" />
+    </div>
+
+    <div class="section">
+      <label>(3) Image URL</label>
+      <input type="text" id="urlInput" placeholder="Paste image URL and click Load" />
+      <button id="loadUrlBtn">Load</button>
+    </div>
+
+    <div class="section slider-row">
+      <div>
+        <label>Resize (%) : <span id="resizeVal">50</span>%</label>
+        <input type="range" id="resizeRange" min="10" max="100" value="50" step="5" />
+      </div>
+      <div>
+        <label>JPEG Quality : <span id="qualityVal">70</span></label>
+        <input type="range" id="qualityRange" min="10" max="95" value="70" step="5" />
+      </div>
+    </div>
+
+    <div class="section actions">
+      <button id="compressBtn">Compress (server)</button>
+      <button id="compressClientBtn">Compress (client-side)</button>
+    </div>
+
+    <div class="section preview">
+      <h3>Preview</h3>
+      <img id="previewImg" alt="preview will appear here" />
+    </div>
+
+    <div class="section download">
+      <a id="downloadLink" href="#" download="compressed_image.jpg" style="display:none">Download Compressed Image</a>
+    </div>
+
+    <div class="note">
+      <small>Backend expected at: <code>http://localhost:5000/compress</code></small>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
