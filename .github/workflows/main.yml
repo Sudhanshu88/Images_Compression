@@ -1,4 +1,4 @@
-name: Portfolio Deployment
+name: Image Compression Deployment
 
 on:
   push:
